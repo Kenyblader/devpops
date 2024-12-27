@@ -1,0 +1,8 @@
+pgadmin_service_name: pgadmin
+pgadmin_container_name: pgadmin
+pgadmin_port: 5050
+pgadmin_email: admin@example.com
+pgadmin_password: admin
+pgadmin_data_volume: pgadmin-data
+pgadmin_network_name: pgadmin-network
+

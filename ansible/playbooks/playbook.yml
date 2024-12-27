@@ -1,0 +1,6 @@
+- hosts: all
+  become: yes
+  roles:
+    - role: odoo_role
+    - role: pgadmin_role
+

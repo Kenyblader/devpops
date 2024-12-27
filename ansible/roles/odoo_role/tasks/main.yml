@@ -1,0 +1,5 @@
+- name: Déployer Odoo avec Docker Compose
+  community.docker.docker_compose:
+    project_src: "{{ playbook_dir }}/roles/odoo_role/templates"
+    state: present
+

@@ -1,0 +1,7 @@
+FROM python:3.6-alpine
+ENV ODOO_URL http://odoo.example.com
+ENV PGADMIN_URL http://pgadmin.example.com
+RUN pip install Fla
+RUN git clone https://github.com/Legeni07/projet_final_.git
+EXPOSE 8080
+ENTRYPOINT ["python", "app.py"]
