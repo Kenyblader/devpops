@@ -1,5 +1,16 @@
-- name: Déployer pgAdmin avec Docker Compose
-  community.docker.docker_compose:
-    project_src: "{{ playbook_dir }}/roles/pgadmin_role/templates"
-    state: present
+- name: Pull pgAdmin Docker image
+  docker_image:
+    name: "kenyblader/pgadmin"
+    tag: "{{ version }}"
+    source: pull
+
+- name: Run pgAdmin container
+  docker_container:
+    name: pgadmin
+    image: "kenyblader/pgadmin:{{ version }}"
+    state: started
+    ports:
+      - "5050:5050"
+    volumes:
+      - "{{ pgadmin_data_path }}:/var/lib/pgadmin"
 
