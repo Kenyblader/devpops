@@ -1,16 +1,11 @@
-- name: Pull Odoo Docker image
-  docker_image:
-    name: "kenyblader/odoo"
-    tag: "{{ version }}"
-    source: pull
+- name: Déployer Odoo avec Docker Compose
+  template:
+    src: docker-compose.yml.j2
+    dest: /home/odoo/docker-compose.yml
 
-- name: Run Odoo container
-  docker_container:
-    name: odoo
-    image: "kenyblader/odoo:{{ version }}"
-    state: started
-    ports:
-      - "8069:8069"
-    volumes:
-      - "{{ odoo_data_path }}:/var/lib/odoo"
+- name: Lancer Odoo
+  command: docker-compose up -d
+  args:
+    chdir: /home/odoo
+
 
