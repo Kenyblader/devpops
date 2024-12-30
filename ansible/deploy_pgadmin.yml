@@ -3,5 +3,5 @@
   hosts: pgadmin_server
   become: yes
   roles:
-    - pgadmin
+    - pgadmin_role
 
