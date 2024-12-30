@@ -1,11 +1,26 @@
-- name: Déployer Odoo avec Docker Compose
+---
+- name: Installer Docker
+  apt:
+    name: docker.io
+    state: present
+
+- name: Installer Docker Compose
+  apt:
+    name: docker-compose
+    state: present
+
+- name: Créer le dossier pour Docker Compose
+  file:
+    path: /opt/odoo
+    state: directory
+    mode: '0755'
+
+- name: Copier le fichier Docker Compose
   template:
     src: docker-compose.yml
-    dest: /home/odoo/docker-compose.yml
+    dest: /opt/odoo/docker-compose.yml
 
-- name: Lancer Odoo
+- name: Démarrer les services avec Docker Compose
   command: docker-compose up -d
   args:
-    chdir: /home/odoo
-
-
+    chdir: /opt/odoo
