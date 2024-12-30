@@ -1,0 +1,7 @@
+---
+- name: Déployer Odoo
+  hosts: odoo_server
+  become: yes
+  roles:
+    - odoo
+
