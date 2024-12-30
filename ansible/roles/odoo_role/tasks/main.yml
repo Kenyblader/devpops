@@ -1,6 +1,6 @@
 - name: Déployer Odoo avec Docker Compose
   template:
-    src: docker-compose.yml.j2
+    src: docker-compose.yml
     dest: /home/odoo/docker-compose.yml
 
 - name: Lancer Odoo
