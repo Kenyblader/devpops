@@ -3,5 +3,5 @@
   hosts: odoo_server
   become: yes
   roles:
-    - odoo
+    - odoo_role
 
