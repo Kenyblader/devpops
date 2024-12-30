@@ -1,6 +1,0 @@
-[odoo_server]
-192.168.234.133 ansible_user=blader ansible_ssh_pass=12345
-
-[pgadmin_server]
-192.168.234.134 ansible_user=blader ansible_ssh_pass=12345
-
